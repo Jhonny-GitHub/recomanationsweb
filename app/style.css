@@ -112,3 +112,23 @@ h3.section-title {
 .errorMessage{
 	display: none;
 }
+::-webkit-input-placeholder{
+	color: white !important;
+	opacity: 1;
+}
+::-moz-placeholder{
+	color: white !important;
+	opacity: 1;
+}
+:-ms-input-placeholder{
+	color: white !important;
+	opacity: 1;
+}
+::-ms-input-placeholder{
+	color: white !important;
+	opacity: 1;
+}
+::placeholder{
+	color: white !important;
+	opacity: 1;
+}

@@ -3,7 +3,7 @@
     "rules": "database.rules.json"
   },
   "hosting": {
-      "site": "awesomerecomanations",
+    "site": "awesomerecomanations",
     "public": "app",
     "ignore": [
       "firebase.json",
