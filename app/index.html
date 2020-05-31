@@ -2,6 +2,8 @@
 <html lang="en">
 
 <head>
+	<script src="dmxAppConnect/dmxAppConnect.js"></script>
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 	<script src="../dmxAppConnect/dmxAppConnect.js"></script>
 	<!-- Required meta tags -->
 	<title>Llista Julia</title>
@@ -24,25 +26,58 @@
 	<link rel="stylesheet" href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css">
 	<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;700&display=swap" rel="stylesheet">
 
-	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 
-	<script src="../dmxAppConnect/dmxBootstrap4Modal/dmxBootstrap4Modal.js" defer=""></script>
-	<script src="../dmxAppConnect/dmxBootstrap4Navigation/dmxBootstrap4Navigation.js" defer=""></script>
+
+	<script src="dmxAppConnect/dmxBootstrap4Modal/dmxBootstrap4Modal.js" defer=""></script>
+	<script src="dmxAppConnect/dmxBootstrap4Navigation/dmxBootstrap4Navigation.js" defer=""></script>
+	<link rel="stylesheet" href="app/style.css" />
+	<style>
+		::placeholder {
+			color: white !important;
+			opacity: 1;
+		}
+
+		::-webkit-input-placeholder {
+			color: white;
+			opacity: 1;
+		}
+
+		::-moz-placeholder {
+			color: white;
+			opacity: 1;
+		}
+
+		:-ms-input-placeholder {
+			color: white;
+			opacity: 1;
+		}
+
+		::-ms-input-placeholder {
+			color: white;
+			opacity: 1;
+		}
+	</style>
+
 </head>
 
-<body class="style6" style="" is="dmx-app" id="index">
+<body class="style6" style="font-family: 'Montserrat', sans-serif;;" is="dmx-app" id="index">
 	<section id="loginPage" class="loginContainer text-gray-500 bg-gray-900 body-font bg-transparent">
-		<div class="container px-5 py-24 mx-auto bg-transparent" style="">
-			<div class="flex flex-col text-center w-full mb-12">
-				<h1 class="sm:text-3xl text-2xl font-medium title-font mb-4 text-white" style="display: none;">Log in</h1>
-				<img src="icon/user-icon.svg" width="100px" class="img-fluid" style="margin: 0 auto;">
-			</div>
-			<div class="flex w-full  flex-col mx-auto px-8 sm:px-0" style="width: 250px">
-				<input id="txtEmail" class="flex-grow w-full bg-transparent rounded border border-white text-white focus:outline-none focus:border-indigo-500 text-base px-4 py-2 mr-4 mb-4 sm:mb-0" type="email" placeholder="Email" autocomplete="on">
-				<input id="txtPassword" class="flex-grow w-full bg-transparent rounded border border-white text-white focus:outline-none focus:border-indigo-500 text-base px-4 py-2 mr-4 mb-4 sm:mb-0" type="password" placeholder="Password"
-					autocomplete="on">
-				<button id="btnLogIn" class="text-white border-0 py-2 px-8 focus:outline-none hover:bg-indigo-600 text-lg button-login " style="background-color: #FFA355; border-radius:15px;" onclick="logIn()">Log in</button>
-				<p id="errorTxt" class="errorMessage text-danger text-center font-weight-light pb-3">Error message</p>
+		<div class="container py-24  bg-transparent ml-auto mr-auto pl-3 pr-3" style="">
+			<div style="box-shadow: 0px 5px 15px -8px rgba(0,0,0,0.45); background: linear-gradient(90deg, #FFA355 0%, #FA6D6E 100%); width: 250px; margin: 0 auto; padding: 20px; border-radius: 10px;">
+				<div class="flex flex-col text-center w-full mb-12">
+					<h1 class="sm:text-3xl text-2xl font-medium title-font mb-4 text-white" style="display: none;">Log in</h1>
+					<img src="icon/user-icon.svg" width="100px" class="img-fluid pt-4" style="margin: 0 auto; padding: 0px 20px;">
+				</div>
+				<div class="flex w-full flex-col mx-auto px-8 sm:px-0 style1" style="width: 200px; padding: 0">
+					<input id="txtEmail" class="flex-grow w-full bg-transparent rounded border border-white text-white focus:outline-none focus:border-indigo-500 text-base px-4 py-2 mr-4 mb-4 sm:mb-0" type="email" placeholder="Email"
+						style="border-bottom: 1px solid white">
+					<input id="txtPassword" class="flex-grow w-full bg-transparent rounded border border-white text-white focus:outline-none focus:border-indigo-500 text-base px-4 py-2 mr-4 mb-4 sm:mb-0" type="password" placeholder="Password"
+						style="border: none; border-bottom: 1px solid white;">
+					<button id="btnLogIn" class="text-white py-2 px-8 focus:outline-none hover:bg-indigo-600 text-lg button-login " style="border-radius: 15px; font-weight: 700; margin-top: 20px; border: 1px solid white; border-color: white;"
+						onclick="logIn()">Log
+						in</button>
+					<p id="errorTxt" class="errorMessage text-danger text-center font-weight-light pb-3">Error message</p>
+				</div>
 			</div>
 		</div>
 	</section>
