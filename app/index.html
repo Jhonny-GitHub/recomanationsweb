@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<script src="../dmxAppConnect/dmxAppConnect.js"></script>
+	<!-- Required meta tags -->
+	<title>Llista Julia</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta name="author" content="Jhonny">
+	<meta name="description" content="Jhonny's awesome music recomendations.">
+
+	<meta property="og:title" content="Llista recomanacions">
+	<meta property="og:description" content="Jhonny's awesome music recomedations.">
+	<meta property="og:image" content="thumb.png">
+	<meta property="og:url" content="https://awesomerecomanations.web.app/">
+	<meta name="twitter:card" content="summary_large_image">
+
+	<!-- Bootstrap CSS -->
+	<link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+	<!-- Custom CSS styles-->
+	<link rel="stylesheet" href="style.css">
+	<link rel="stylesheet" href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css">
+	<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;700&display=swap" rel="stylesheet">
+
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+
+	<script src="../dmxAppConnect/dmxBootstrap4Modal/dmxBootstrap4Modal.js" defer=""></script>
+	<script src="../dmxAppConnect/dmxBootstrap4Navigation/dmxBootstrap4Navigation.js" defer=""></script>
+</head>
+
+<body class="style6" style="" is="dmx-app" id="index">
+	<section id="loginPage" class="loginContainer text-gray-500 bg-gray-900 body-font bg-transparent">
+		<div class="container px-5 py-24 mx-auto bg-transparent" style="">
+			<div class="flex flex-col text-center w-full mb-12">
+				<h1 class="sm:text-3xl text-2xl font-medium title-font mb-4 text-white" style="display: none;">Log in</h1>
+				<img src="icon/user-icon.svg" width="100px" class="img-fluid" style="margin: 0 auto;">
+			</div>
+			<div class="flex w-full  flex-col mx-auto px-8 sm:px-0" style="width: 250px">
+				<input id="txtEmail" class="flex-grow w-full bg-transparent rounded border border-white text-white focus:outline-none focus:border-indigo-500 text-base px-4 py-2 mr-4 mb-4 sm:mb-0" type="email" placeholder="Email" autocomplete="on">
+				<input id="txtPassword" class="flex-grow w-full bg-transparent rounded border border-white text-white focus:outline-none focus:border-indigo-500 text-base px-4 py-2 mr-4 mb-4 sm:mb-0" type="password" placeholder="Password"
+					autocomplete="on">
+				<button id="btnLogIn" class="text-white border-0 py-2 px-8 focus:outline-none hover:bg-indigo-600 text-lg button-login " style="background-color: #FFA355; border-radius:15px;" onclick="logIn()">Log in</button>
+				<p id="errorTxt" class="errorMessage text-danger text-center font-weight-light pb-3">Error message</p>
+			</div>
+		</div>
+	</section>
+	<div class="container wappler-block pt-4 pb-5 pl-5 pr-5" id="pageContainer" style="display:none;">
+		<button id="btnLogOut" class="btn btn-outline-danger">LogOut</button>
+		<div class="row style1" style="display: inherit">
+			<div class="text-center col-12 col-md-10 offset-md-1 col-lg-8 offset-lg-2 col-xl-6 offset-xl-3 style3 pt-1" style="box-shadow: 0px 5px 15px -8px rgba(0,0,0,0.45); background: linear-gradient(90deg, #FFA355 0%, #FA6D6E 100%);">
+				<div class="style4">
+					<iframe src="https://open.spotify.com/embed/playlist/2kuS1AXCZ1Ud1E3dWffSwD" width="100%" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+				</div>
+				<div class="d-block bg-transparent style7 pt-4 pb-4 pl-3 pr-3">
+					<h5 style="font-family: 'Montserrat', sans-serif; font-weight: 800; color: white;">Jhonny's Awesome<br><small class="text-muted style8" style="font-weight: 300; color: white !important;">Playlist</small></h5>
+
+					<button class="btn style5 btn-sm btn-block w-50 btn-outline-light" style="display:none">Check</button>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- Optional JavaScript -->
+	<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+
+	<!-- The core Firebase JS SDK is always required and must be listed first -->
+	<script src="https://www.gstatic.com/firebasejs/7.14.5/firebase-app.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/7.14.5/firebase-database.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/7.14.5/firebase-auth.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/7.14.5/firebase-firestore.js"></script>
+
+
+	<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+	<script>
+		// Your web app's Firebase configuration
+		var firebaseConfig = {
+			apiKey: "AIzaSyDxQvgPX0LG-QbrKuTfJrOJbSILTpOMjp0",
+			authDomain: "recomanacions-fb378.firebaseapp.com",
+			databaseURL: "https://recomanacions-fb378.firebaseio.com",
+			projectId: "recomanacions-fb378",
+			storageBucket: "recomanacions-fb378.appspot.com",
+			messagingSenderId: "601002292230",
+			appId: "1:601002292230:web:6a5a34d5252dd5dc7dbf87"
+		};
+		// Initialize Firebase
+		firebase.initializeApp(firebaseConfig);
+
+	</script>
+	<script src="init-firebase.js"></script>
+</body>
+
+</html>
